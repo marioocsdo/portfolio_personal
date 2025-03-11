@@ -1,0 +1,336 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --negro: #1b263b;
+    --verde: #e0e1dd;
+}
+
+html{
+    scroll-behavior: smooth;
+
+}
+
+body{
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background-color: var(--verde);
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: 'Satoshi-Black';
+    src: url("fonts/Satoshi-Black.woff2"), type("woff2");
+    src: url("fonts/Satoshi-Black.woff"), type("woff");
+    src: url("fonts/Satoshi-Black.ttf"), type("truetype");
+}
+
+@font-face {
+    font-family: 'Satoshi-Regular';
+    src: url("fonts/Satoshi-Regular.woff2"), type("woff2");
+    src: url("fonts/Satoshi-Regular.woff"), type("woff");
+    src: url("fonts/Satoshi-Regular.ttf"), type("truetype");
+}
+
+@font-face {
+    font-family: 'Satoshi-Light';
+    src: url("fonts/Satoshi-Light.woff2"), type("woff2");
+    src: url("fonts/Satoshi-Light.woff"), type("woff");
+    src: url("fonts/Satoshi-Light.ttf"), type("truetype");
+}
+
+.carga{
+    width: 100dvw;
+    height: 100dvh;
+    background-color: var(--negro);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    font-family: 'Satoshi-Regular';
+    color: var(--verde);
+    z-index: 20;
+}
+
+.nombre{
+    position: relative;
+    width: 20dvw;
+    height: 7dvh;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    user-select: none;
+}
+
+.nombre h2{
+    animation: esconder_nombre .5s forwards;
+    animation-delay: 1s;
+}
+
+@keyframes esconder_nombre{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-120%);
+    }
+    100%{
+        transform: translateY(-120%);
+        z-index: 1;
+    }
+}
+
+@keyframes mostrar_main{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(-100dvh);
+    }
+}
+
+.main{
+    position: absolute;
+    width: 100dvw;
+    height: 250dvh;
+    animation: mostrar_main .5s forwards;
+    animation-delay: 1.2s;
+    overflow-x: hidden;
+}
+
+.portada{
+    position: relative;
+    width: 100%;
+    height: 95dvh;
+    background-color: var(--verde);
+    color: var(--negro);
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.portada h3{
+    font-family: 'Satoshi-Regular';
+    font-size: xx-large;
+    padding: 1%;
+}
+
+.portada .titulo{
+    position: relative;
+    font-family: 'Satoshi-Regular';
+    font-weight: bolder;
+    font-size: 65px;
+    top: 10%;
+    left: 1%;
+    overflow: hidden;
+}
+
+.header{
+    position: fixed;
+    top: 1%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    z-index: 10;
+    font-family: 'Satoshi-Black';
+    font-size: larger;
+    padding-left: 1%;
+    color: var(--negro);
+    transition: .5s;
+}
+
+.categorias{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 18%;
+    left: 67.5%;
+}
+
+.footer{
+    position: relative;
+    width: 100%;
+    top: 45dvh;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    color: var(--negro);
+    justify-content: space-between;
+    font-family: 'Satoshi-Light';
+    font-size: larger;
+    padding-left: 1%;
+    padding-right: 1%;
+    overflow: hidden;
+}
+
+.footer h2{
+    font-size: xx-large;
+}
+
+.info{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.proyectos{
+    width: 100%;
+    height: 155dvh;
+    background-color: var(--negro);
+}
+
+@keyframes aparecer_lettering{
+    from{
+        transform: translateY(105%);
+    }
+    to{
+        transform: translateY(0%);
+    }
+}
+
+#aparecer{
+    transform: translateY(105%);
+    animation: aparecer_lettering .5s forwards;
+    animation-delay: 1.5s;
+}
+
+.linea{
+    position: relative;
+    width: 100%;
+    height: 20%;
+
+}
+
+#linea1{
+    background-color: transparent;
+}
+
+#linea2{
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+}
+#linea3{
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+}
+#linea4{
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+}
+#linea5{
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+}
+
+#top-left{
+    position: relative;
+    padding: 5px;
+}
+#top-right{
+    position: relative;
+    left: 97.8%;
+}
+
+
+.deco_proyectos{
+    color: var(--verde);
+    display: flex;
+    width: 99%;
+    left: .5%;
+    align-items: center;
+    position: relative;
+}
+
+#bottom-left{
+    position: relative;
+    padding: 5px;
+}
+#bottom-right{
+    position: relative;
+    left: 97.8%;
+}
+
+
+.deco_portada{
+    color: var(--negro);
+    display: flex;
+    flex-direction: row;
+    width: 99%;
+    align-items: center;
+    top: 97%;
+    left: .5%;
+    position: relative;
+}
+
+.interruptor{
+    position: relative;
+    width: 0;
+    height: 0;
+}
+
+.elemento {
+    width: 25%;
+    height: 100%;
+    position: relative;
+    opacity: 0;
+    overflow: hidden;
+    transition: 1s;
+}
+
+.elemento::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: grayscale(100%);
+    transition: transform 1s ease, filter 1s ease;
+}
+
+/* Asignamos las imágenes a ::before para que la transición funcione */
+#linea2 #elemento1::before,
+#linea2 #elemento4::before,
+#linea3 #elemento3::before,
+#linea4 #elemento2::before,
+#linea4 #elemento4::before,
+#linea5 #elemento1::before,
+#linea5 #elemento3::before {
+    background-image: url('image.png');
+}
+
+/* Efecto de hover */
+.elemento:hover::before {
+    transform: scale(1.1); /* Zoom en la imagen */
+    filter: grayscale(0%);
+}
+
+.elemento:hover .numero {
+    opacity: 0;
+    transition: 0.5s;
+}
+
+
+.numero{
+    position: relative;
+    font-family: 'satoshi-black';
+    color: var(--negro);
+    opacity: 1;
+    transition: .5s;
+}
