@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+    <link id="stylesheet" rel="stylesheet" href="index.css">
     <title>Mario.</title>
 </head>
 <body>
     <div class="header">
         <h3>Mario Casado.</h3>
         <div class="categorias">
-            <h3  id="aparecer">INDEX</h3>
-            <h3  id="aparecer">&</h3>
-            <h3  id="aparecer">PORTFOLIO</h3>
+            <a href="index_espanol.html"><h3 id="aparecer">ES</h3></a>
+            <a href="index.html"><h3 id="aparecer">EN</h3></a>
         </div>
     </div>
     <div class="carga">
@@ -28,8 +27,21 @@
                 
             <div class="titulo">
             <h1 id="aparecer">APP DEVELOPER & <br>
-            WEB DESIGNER</h1></div>
+            WEB DESIGNER</h1>
+                <h3 id="aparecer">Kept it simple to keep the ideas for you.</h3>
+            </div>
             
+            <div class="redes" id="git">
+                    <a href="https://github.com/marioocsdo" id="git"><ion-icon name="logo-github"></ion-icon></a>
+                
+                
+                    <a id="linke" href="https://linkedin.com/in/mariocasado404"><ion-icon name="logo-linkedin"></ion-icon></a>
+                
+                
+                    <a id="insta" href="https://instagram.com/marioo.csdo"><ion-icon name="logo-instagram"></ion-icon></a>
+                
+            </div>
+
             <div class="footer">
                 <h2 id="aparecer">Age: 22</h2>
                 <div class="info"  id="aparecer">
@@ -46,13 +58,16 @@
             <div class="linea" id="linea1">
                 <div class="deco_proyectos"><p id="top-left">+</p>
                 <p id="top-right">+</p>
-            </div>
                 
+            </div>
+                <h2>Take a peek at my projects</h2>
             </div>
             <div class="linea" id="linea2">
                 <div class="interruptor" id="interruptor_linea1"></div>
                 <div class="elemento" id="elemento1">
-                    <div class="numero">01</div>
+                    <p class="numero">01</p>
+                    <a href="https://marioocsdo.github.io/portfolio_ricardito">
+                    </a>
                 </div>
                 <div class="elemento" id="elemento2"></div>
                 <div class="elemento" id="elemento3"></div>
@@ -160,12 +175,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-        window.onload = function() {
-            if (window.innerWidth <= 768) { // Móvil
-                window.location.href = "index_mobile.html";
-            } else { // Escritorio
-                window.location.href = "index.html";
-            }
-        };
+window.onload = function() {
+    let link = document.getElementById("stylesheet");
+
+    if (window.innerWidth <= 768) { 
+        link.href = "index_mobile.css";
+    } else { 
+        link.href = "index.css";
+    }
+};
 
 </script>
