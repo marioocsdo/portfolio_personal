@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="stylesheet" rel="stylesheet" href="index.css">
+    <title>Mario.</title>
+</head>
+<body>
+    <div class="header">
+        <h3>Mario Casado.</h3>
+        <div class="categorias">
+            <a href="index_espanol.html"><h3 id="aparecer">ES</h3></a>
+            <a href="index.html"><h3 id="aparecer">EN</h3></a>
+        </div>
+    </div>
+    <div class="carga">
+       <div class="nombre">
+        <h2>Mario Casado</h2>
+       </div> 
+    </div>
+
+    <div class="main">
+        <div class="portada">
+            <div class="deco_portada"><p id="bottom-left">+</p>
+                <p id="bottom-right">+</p></div>
+                
+            <div class="titulo">
+            <h1 id="aparecer">DESARROLLO DE APPS <br> & <br>
+            DISEÑO WEB</h1>
+                <h3 id="aparecer">Mantuve la simplicidad para dejar las ideas para ti.</h3>
+            </div>
+            
+            <div class="redes" id="git">
+                    <a href="https://github.com/marioocsdo" id="git"><ion-icon name="logo-github"></ion-icon></a>
+                
+                
+                    <a id="linke" href="https://linkedin.com/in/mariocasado404"><ion-icon name="logo-linkedin"></ion-icon></a>
+                
+                
+                    <a id="insta" href="https://instagram.com/marioo.csdo"><ion-icon name="logo-instagram"></ion-icon></a>
+                
+            </div>
+
+            <div class="footer">
+                <h2 id="aparecer"></h2>
+                <div class="info"  id="aparecer">
+                    <p>Disponibilidad: <br>Marzo 2025</p>
+                    <p>Contacto: <br>marioodev@gmail.com</p>
+                    <p>Ubicación actual: <br>37.10224°N 3,40176°W</p>
+                    <p>Copyright: <br>©Mario Casado</p>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="proyectos">
+            <div class="linea" id="linea1">
+                <div class="deco_proyectos"><p id="top-left">+</p>
+                <p id="top-right">+</p>
+                
+            </div>
+                <h2>Echa un vistazo a mis proyectos</h2>
+            </div>
+            <div class="linea" id="linea2">
+                <div class="interruptor" id="interruptor_linea1"></div>
+                <div class="elemento" id="elemento1">
+                    <p class="numero">01</p>
+                    <a href="https://marioocsdo.github.io/portfolio_ricardito">
+                    </a>
+                </div>
+                <div class="elemento" id="elemento2"></div>
+                <div class="elemento" id="elemento3"></div>
+                <div class="elemento" id="elemento4">
+                    <div class="numero">02</div>
+                </div>
+            </div>
+            <div class="linea" id="linea3">
+                <div class="interruptor" id="interruptor_linea2"></div>
+                <div class="elemento" id="elemento1"></div>
+                <div class="elemento" id="elemento2"></div>
+                <div class="elemento" id="elemento3">
+                    <div class="numero">03</div>
+                </div>
+                <div class="elemento" id="elemento4"></div>
+            </div>
+            <div class="linea" id="linea4">
+                <div class="interruptor_main"></div>
+                <div class="interruptor" id="interruptor_linea3"></div>
+                <div class="elemento" id="elemento1"></div>
+                <div class="elemento" id="elemento2">
+                    <div class="numero">04</div>
+                </div>
+                <div class="elemento" id="elemento3"></div>
+                <div class="elemento" id="elemento4">
+                    <div class="numero">05</div>
+                </div>
+            </div>
+            <div class="linea" id="linea5">
+                <div class="interruptor" id="interruptor_linea4"></div>
+                <div class="elemento" id="elemento1">
+                    <div class="numero">06</div>
+                </div>
+                <div class="elemento" id="elemento2"></div>
+                <div class="elemento" id="elemento3">
+                    <div class="numero">07</div>
+                </div>
+                <div class="elemento" id="elemento4"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    document.body.style.overflow = "hidden"; // Bloquea el scroll al cargar
+
+    setTimeout(() => {
+        document.body.style.overflow = "auto";
+    }, 2500); // Espera el tiempo de la animación (1.5s de delay + 1s de animación)
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const header = document.querySelector(".header");
+    const test = document.querySelector(".interruptor_main");
+    const body = document.querySelector("body");
+
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                header.style.color = "var(--verde)"; // Expande cuando test aparece
+                body.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue("--negro");
+                }
+            else{
+                header.style.color = "var(--negro)";
+                body.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue("--verde");
+            }
+        });
+    }, { threshold: 0.1 }); // Detecta cuando al menos el 10% de test es visible
+
+    observer.observe(test);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const interruptores = document.querySelectorAll(".interruptor");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Encuentra la línea que contiene este interruptor
+                const linea = entry.target.closest(".linea");
+                const elementos = linea.querySelectorAll(".elemento");
+                if (linea) {
+                    // Encuentra todos los elementos dentro de esa línea y hazlos visibles
+                    
+                    elementos.forEach(elemento => {
+                        elemento.style.opacity = "1";
+                    });
+                }
+                else{
+                    elemento.style.opacity = 0;
+                }
+            }
+        });
+    }, { threshold: 0.2 }); // Se activará cuando el 20% del interruptor sea visible
+
+    // Observamos cada interruptor
+    interruptores.forEach(interruptor => {
+        observer.observe(interruptor);
+    });
+});
+
+window.onload = function() {
+    let link = document.getElementById("stylesheet");
+
+    if (window.innerWidth <= 768) { 
+        link.href = "index_mobile.css";
+    } else { 
+        link.href = "index.css";
+    }
+};
+
+</script>
