@@ -55,57 +55,27 @@
 
         </div>
         <div class="proyectos">
-            <div class="linea" id="linea1">
-                <div class="deco_proyectos"><p id="top-left">+</p>
-                <p id="top-right">+</p>
+            <div class="juego" id="clicker">
+                <div class="boton-mostrar">AAAAAAAAAA</div>
+            </div>
+            <div class="juego">BBBBBBBBBBBB</div>
+            <div class="juego">CCCCCCCCCCCCCCC</div>
+        </div>
+    </div>
+    <div class="mostrar-juego">
+        <div class="mejoras">
+            <div class="mejora" id="mejo_1"><h1>HTML kiddie </h1> <h1 id="mej1_prec">Cost: 5 CVs</h1></div>
+            <div class="mejora" id="mejo_2"><h1>React Boy </h1><h1 id="mej2_prec">Cost: 10 CVs</h1></div>
+            <div class="mejora" id="mejo_3"><h1>Figma Designer </h1><h1 id="mej3_prec">Cost: 15 CVs</h1></div>
+            <div class="mejora" id="mejo_4"><h1>JavaScript Master </h1><h1 id="mej4_prec">Cost: 20 CVs</h1></div>
+        </div>
+        <div class="click">
+            <h2 class="numero">-</h2>
+            <h3 class="persec">Per second: </h3>
+            <h3 class="potencia">Per Click: </h3>
+            <div class="screen">
+                <h1 style="user-select: none;">CV</h1>
                 
-            </div>
-                <h2>Echa un vistazo a mis proyectos</h2>
-            </div>
-            <div class="linea" id="linea2">
-                <div class="interruptor" id="interruptor_linea1"></div>
-                <div class="elemento" id="elemento1">
-                    <p class="numero">01</p>
-                    <a href="https://marioocsdo.github.io/portfolio_ricardito">
-                    </a>
-                </div>
-                <div class="elemento" id="elemento2"></div>
-                <div class="elemento" id="elemento3"></div>
-                <div class="elemento" id="elemento4">
-                    <div class="numero">02</div>
-                </div>
-            </div>
-            <div class="linea" id="linea3">
-                <div class="interruptor" id="interruptor_linea2"></div>
-                <div class="elemento" id="elemento1"></div>
-                <div class="elemento" id="elemento2"></div>
-                <div class="elemento" id="elemento3">
-                    <div class="numero">03</div>
-                </div>
-                <div class="elemento" id="elemento4"></div>
-            </div>
-            <div class="linea" id="linea4">
-                <div class="interruptor_main"></div>
-                <div class="interruptor" id="interruptor_linea3"></div>
-                <div class="elemento" id="elemento1"></div>
-                <div class="elemento" id="elemento2">
-                    <div class="numero">04</div>
-                </div>
-                <div class="elemento" id="elemento3"></div>
-                <div class="elemento" id="elemento4">
-                    <div class="numero">05</div>
-                </div>
-            </div>
-            <div class="linea" id="linea5">
-                <div class="interruptor" id="interruptor_linea4"></div>
-                <div class="elemento" id="elemento1">
-                    <div class="numero">06</div>
-                </div>
-                <div class="elemento" id="elemento2"></div>
-                <div class="elemento" id="elemento3">
-                    <div class="numero">07</div>
-                </div>
-                <div class="elemento" id="elemento4"></div>
             </div>
         </div>
     </div>
@@ -114,74 +84,6 @@
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-    document.body.style.overflow = "hidden"; // Bloquea el scroll al cargar
+<script type="module" src="main.js"></script>
 
-    setTimeout(() => {
-        document.body.style.overflow = "auto";
-    }, 2500); // Espera el tiempo de la animación (1.5s de delay + 1s de animación)
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    const header = document.querySelector(".header");
-    const test = document.querySelector(".interruptor_main");
-    const body = document.querySelector("body");
-
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                header.style.color = "var(--verde)"; // Expande cuando test aparece
-                body.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue("--negro");
-                }
-            else{
-                header.style.color = "var(--negro)";
-                body.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue("--verde");
-            }
-        });
-    }, { threshold: 0.1 }); // Detecta cuando al menos el 10% de test es visible
-
-    observer.observe(test);
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    const interruptores = document.querySelectorAll(".interruptor");
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Encuentra la línea que contiene este interruptor
-                const linea = entry.target.closest(".linea");
-                const elementos = linea.querySelectorAll(".elemento");
-                if (linea) {
-                    // Encuentra todos los elementos dentro de esa línea y hazlos visibles
-                    
-                    elementos.forEach(elemento => {
-                        elemento.style.opacity = "1";
-                    });
-                }
-                else{
-                    elemento.style.opacity = 0;
-                }
-            }
-        });
-    }, { threshold: 0.2 }); // Se activará cuando el 20% del interruptor sea visible
-
-    // Observamos cada interruptor
-    interruptores.forEach(interruptor => {
-        observer.observe(interruptor);
-    });
-});
-
-window.onload = function() {
-    let link = document.getElementById("stylesheet");
-
-    if (window.innerWidth <= 768) { 
-        link.href = "index_mobile.css";
-    } else { 
-        link.href = "index.css";
-    }
-};
-
-</script>
+<script type="module" src="clicker.js"></script>
