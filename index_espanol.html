@@ -46,7 +46,7 @@
                 <h2 id="aparecer"></h2>
                 <div class="info"  id="aparecer">
                     <p>Disponibilidad: <br>Marzo 2025</p>
-                    <p>Contacto: <br>marioodev@gmail.com</p>
+                    <p>Contacto: <br>marioodev404@gmail.com</p>
                     <p>Ubicación actual: <br>37.10224°N 3,40176°W</p>
                     <p>Copyright: <br>©Mario Casado</p>
 
@@ -86,4 +86,74 @@
 
 <script type="module" src="main.js"></script>
 
+<<<<<<< HEAD
 <script type="module" src="clicker.js"></script>
+=======
+    setTimeout(() => {
+        document.body.style.overflow = "auto";
+    }, 2500); // Espera el tiempo de la animación (1.5s de delay + 1s de animación)
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const header = document.querySelector(".header");
+    const test = document.querySelector(".interruptor_main");
+    const body = document.querySelector("body");
+
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                header.style.color = "var(--verde)"; // Expande cuando test aparece
+                body.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue("--negro");
+                }
+            else{
+                header.style.color = "var(--negro)";
+                body.style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue("--verde");
+            }
+        });
+    }, { threshold: 0.1 }); // Detecta cuando al menos el 10% de test es visible
+
+    observer.observe(test);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const interruptores = document.querySelectorAll(".interruptor");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Encuentra la línea que contiene este interruptor
+                const linea = entry.target.closest(".linea");
+                const elementos = linea.querySelectorAll(".elemento");
+                if (linea) {
+                    // Encuentra todos los elementos dentro de esa línea y hazlos visibles
+                    
+                    elementos.forEach(elemento => {
+                        elemento.style.opacity = "1";
+                    });
+                }
+                else{
+                    elemento.style.opacity = 0;
+                }
+            }
+        });
+    }, { threshold: 0.2 }); // Se activará cuando el 20% del interruptor sea visible
+
+    // Observamos cada interruptor
+    interruptores.forEach(interruptor => {
+        observer.observe(interruptor);
+    });
+});
+
+window.onload = function() {
+    let link = document.getElementById("stylesheet");
+
+    if (window.innerWidth <= 768) { 
+        link.href = "index_mobile.css";
+    } else { 
+        link.href = "index.css";
+    }
+};
+
+</script>
+>>>>>>> 009e260f9dc9509998ff3806ecd1e0b8edcd1245
